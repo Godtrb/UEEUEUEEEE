@@ -47,14 +47,16 @@ def ingresar_Participante(lista={}):
                         print(" 1)Si                                           2)No")
                         proceed = int(input())
                         if proceed==1:
-                            lista [dorsnum] = {
-                                "Nombre": name,
-                                "Edad": age,
-                                "Categ": categ
-                            }
-                        else:
-                            print("Ingreso invalido, intente nuevamente")
-
+                            if proceed==1:
+                                lista [dorsnum] = {
+                                    "Nombre": name,
+                                    "Edad": age,
+                                    "Categ": categ
+                                }
+                            else:
+                                print("Ingreso invalido, intente nuevamente")
+                        elif proceed != 1 and proceed != 2:
+                            print("Respuesta invalida, intente nuevamente")
             elif proceed!=1 and proceed!=2:
                 print("Respuesta invalida, intente nuevamente")
 participantes={}
