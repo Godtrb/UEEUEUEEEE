@@ -43,14 +43,18 @@ def ingresar_Participante(lista={}):
                             categ="Adulto"
                         elif age >=50:
                             categ="Master"
+                        print(f"La eded de {name} es {age} lo que lo colocaria dentro de la categoria de {categ}, es esto correcto?")
+                        print(" 1)Si                                           2)No")
+                        proceed = int(input())
+                        if proceed==1:
+                            lista [dorsnum] = {
+                                "Nombre": name,
+                                "Edad": age,
+                                "Categ": categ
+                            }
+                        else:
+                            print("Ingreso invalido, intente nuevamente")
 
-                        lista [dorsnum] = {
-                            "Nombre": name,
-                            "Edad": age,
-                            "Categ": categ
-                        }
-                    else:
-                        print("Ingreso invalido, intente nuevamente")
             elif proceed!=1 and proceed!=2:
                 print("Respuesta invalida, intente nuevamente")
 participantes={}
