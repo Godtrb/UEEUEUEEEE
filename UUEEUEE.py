@@ -77,15 +77,19 @@ while opt!=4:
             list = participantes.items()
             if len(list) > 0:
                 result = quick_sort_Nombre(list)
+                contdisp=0
                 for name, value in result:
-                    print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
+                    print(f"{contdisp}) Nombre:{value['Nombre']} Edad:{value['Edad']} Categoria{value['Categ']}")
+                    contdisp+=1
             else:
                 print("No participantes registrados actualmente.")
         case 3:
             list = participantes.items()
             if len(list) > 0:
                 result = quick_sort_Edad(list)
+                contdisp=0
                 for name, value in result:
-                    print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
+                    print(f"{contdisp}) Nombre:{value['Nombre']} Edad:{value['Edad']} Categoria{value['Categ']}")
+                    contdisp+=1
             else:
                 print("No participantes registrados actualmente.")
