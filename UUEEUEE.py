@@ -26,7 +26,9 @@ def quick_sort_Edad(lista):
         return quick_sort_Edad(menores) + iguales + quick_sort_Edad(mayores)
 def ingresar_Participante(lista={}):
         proceed=0
-        dorsnum=int(input("ingrese numero de ID para el participante:  (Unicamente numero entero)"))
+        print("ingrese numero de ID para el participante  "
+                        "(Unicamente numero entero)" )
+        dorsnum =int(input())
         while proceed!=1:
             name=input("ingrese nombre del participante: ")
             print(f"El nombre ingresado es {name}, es este nombre correcto?")
