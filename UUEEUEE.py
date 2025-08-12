@@ -25,24 +25,34 @@ def quick_sort_Edad(lista):
 
         return quick_sort_Edad(menores) + iguales + quick_sort_Edad(mayores)
 def ingresar_Participante(lista={}):
-        dorsnum=int(input("ingrese numero de ID para el participante: "))
-        name=input("ingrese nombre del participante: ")
-        age=int(input("ingrese la edad del participante: "))
-        if age > 10 and age < 101:
-            if age >=10 and age <20:
-                categ="Juvenil"
-            elif age >=20 and age <50:
-                categ="Adulto"
-            elif age >=50:
-                categ="Master"
+        proceed=0
+        dorsnum=int(input("ingrese numero de ID para el participante:  (Unicamente numero entero)"))
+        while proceed!=1:
+            name=input("ingrese nombre del participante: ")
+            print(f"El nombre ingresado es {name}, es este nombre correcto?")
+            print(" 1)Si                                           2)No")
+            proceed=int(input())
+            if proceed==1:
+                proceed=0
+                while proceed!=1:
+                    age=int(input("ingrese la edad del participante: "))
+                    if age > 10 and age < 101:
+                        if age >=10 and age <20:
+                            categ="Juvenil"
+                        elif age >=20 and age <50:
+                            categ="Adulto"
+                        elif age >=50:
+                            categ="Master"
 
-            lista [dorsnum] = {
-                "Nombre": name,
-                "Edad": age,
-                "Categ": categ
-            }
-        else:
-            print("Ingreso invalido, intente nuevamente")
+                        lista [dorsnum] = {
+                            "Nombre": name,
+                            "Edad": age,
+                            "Categ": categ
+                        }
+                    else:
+                        print("Ingreso invalido, intente nuevamente")
+            elif proceed!=1 and proceed!=2:
+                print("Respuesta invalida, intente nuevamente")
 participantes={}
 opt=0
 while opt!=4:
