@@ -66,23 +66,24 @@ while opt!=4:
     print("1.Ingresar participante")
     print("2.Mostrar ordenados por Nombre")
     print("3.Mostrar ordenados por edad")
-    print("Salir.")
+    print("4.Salir.")
     opt=int(input(""))
     match opt:
         case 1:
             ingresar_Participante(participantes)
         case 2:
             list = participantes.items()
-            result = quick_sort_Nombre(list)
-            for name, value in result:
-                print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
+            if len(list) > 0:
+                result = quick_sort_Nombre(list)
+                for name, value in result:
+                    print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
+            else:
+                print("No participantes registrados actualmente.")
         case 3:
             list = participantes.items()
-            result = quick_sort_Edad(list)
-            for name, value in result:
-                print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
-
-list= list(participantes.items())
-result= quick_sort_Nombre(list)
-for name, value in result:
-    print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
+            if len(list) > 0:
+                result = quick_sort_Edad(list)
+                for name, value in result:
+                    print(f"{value['Nombre']}, {value['Edad']}, {value['Categ']}")
+            else:
+                print("No participantes registrados actualmente.")
